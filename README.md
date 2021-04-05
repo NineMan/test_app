@@ -51,13 +51,26 @@ source env/bin/activate
 
 3. [Установите зависимости](https://pip.pypa.io/en/stable/user_guide/#requirements-files)
 ```pip install -r requirements.txt```
+   
+4. Создайте ```.env``` файл (или переименуйте и измените ```.env.example```) в корне проекта и задайте переменные окружения для проекта:
+```
+touch .env
+echo SECRET_KEY=$(openssl rand -hex 32) >> .env
+echo ALLOWED_HOSTS='"127.0.0.1", "localhost"' >> .env
+echo RQ_HOST=localhost >> .env
+echo RQ_PORT=6379 >> .env
+echo RQ_DB=0 >> .env
+echo RQ_USER=admin >> .env
+echo RQ_PASSWORD=some-password >> .env
+echo RQ_TIMEOUT=360 >> .env
+```
 
-4. [Примените миграции](https://docs.djangoproject.com/en/2.2/ref/django-admin/#django-admin-migrate)
+5. [Примените миграции](https://docs.djangoproject.com/en/2.2/ref/django-admin/#django-admin-migrate)
 ```python manage.py migrate```
 
-5. [Загрузите тестовые данные](https://docs.djangoproject.com/en/2.2/ref/django-admin/#django-admin-loaddata)
+6. [Загрузите тестовые данные](https://docs.djangoproject.com/en/2.2/ref/django-admin/#django-admin-loaddata)
 ```python manage.py loaddata data```
 
-6. Запустите проект ```python manage.py runserver``` 
+7. Запустите проект ```python manage.py runserver``` 
    
-7. Откройте в браузере адрес http://localhost:8000/api/pages/
+8. Откройте в браузере адрес http://localhost:8000/api/pages/
