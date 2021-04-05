@@ -56,7 +56,7 @@ source env/bin/activate
 ```python manage.py migrate```
 
 5. [Загрузите тестовые данные](https://docs.djangoproject.com/en/2.2/ref/django-admin/#django-admin-loaddata)
-```python manage.py loaddata pages```
+```python manage.py loaddata data```
 
 6. Запустите проект ```python manage.py runserver``` 
    
